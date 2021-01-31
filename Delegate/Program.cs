@@ -9,9 +9,12 @@ namespace Delegate
         public static Dictionary<string,HelloDelegate> HelloDic;
         static void Main(string[] args)
         {
-            string name =" ";
+            string name ="pee ";
             Initialization();
-            while(name.Length>0)
+            
+            HelloDic["Sec"](name);
+
+            while (name.Length>0)
             {
                 name =Console.ReadLine();
                 if (name.Length > 0 && name!=" ")
@@ -31,6 +34,7 @@ namespace Delegate
                         }
                     }
             };
+
 
         }
 
@@ -53,7 +57,8 @@ namespace Delegate
             {
                 {"Well",SimpleHello },
                 {"Bad",HardHello },
-                {"Best",PrettyHello }
+                {"Best",PrettyHello },
+                {"Sec",delegate(string name){ Console.WriteLine(@"{0} - poo", name);} }
             };
         }
     }
